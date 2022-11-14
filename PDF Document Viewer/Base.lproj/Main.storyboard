@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Container View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Container View Controller" id="BYZ-38-t0r" userLabel="Container View Controller" customClass="ContainerViewController" customModule="PDF_Document_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8h-Cv-9yz">
+                                <rect key="frame" x="0.0" y="24" width="1024" height="1322"/>
+                                <connections>
+                                    <segue destination="FVW-YJ-l5w" kind="embed" identifier="Embed UIPageViewController" id="UyE-00-zel"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemFillColor"/>
+                        <constraints>
+                            <constraint firstItem="E8h-Cv-9yz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lto-uI-bpU"/>
+                            <constraint firstItem="E8h-Cv-9yz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WDR-gV-QLO"/>
+                            <constraint firstItem="E8h-Cv-9yz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cht-S6-q8s"/>
+                            <constraint firstItem="E8h-Cv-9yz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vKq-kt-ekw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.439252336448597" y="69.97840172786178"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="aEM-nc-cQ0">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FVW-YJ-l5w" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEB-h3-lp0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="70"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="UsX-gj-uN0">
+            <objects>
+                <viewController storyboardIdentifier="Page Content View Controller" title="Page Content View Controller" id="iya-T8-R0G" userLabel="Page Content View Controller" customClass="PageContentViewController" customModule="PDF_Document_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J8S-ib-KUW">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="kSW-j7-Nn6">
+                                <rect key="frame" x="40" y="44" width="944" height="1282"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yd0-Yh-YTt">
+                                        <rect key="frame" x="0.0" y="0.0" width="944" height="37"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="gdd-ga-cWn" userLabel="PDF Page View" customClass="PDFPageView" customModule="PDF_Document_Viewer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="77" width="944" height="1151.5"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useCropBox" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page X of Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBg-Oi-g3z">
+                                        <rect key="frame" x="0.0" y="1268.5" width="944" height="13.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MES-zq-wH5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kSW-j7-Nn6" firstAttribute="bottom" secondItem="J8S-ib-KUW" secondAttribute="bottomMargin" id="2ca-BR-pOV"/>
+                            <constraint firstItem="kSW-j7-Nn6" firstAttribute="trailing" secondItem="J8S-ib-KUW" secondAttribute="trailingMargin" id="U0M-Nl-a9z"/>
+                            <constraint firstItem="kSW-j7-Nn6" firstAttribute="top" secondItem="J8S-ib-KUW" secondAttribute="topMargin" id="UBT-cT-wze"/>
+                            <constraint firstItem="kSW-j7-Nn6" firstAttribute="leading" secondItem="J8S-ib-KUW" secondAttribute="leadingMargin" id="cFx-09-yBZ"/>
+                        </constraints>
+                        <directionalEdgeInsets key="directionalLayoutMargins" top="20" leading="40" bottom="20" trailing="40"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageNumberLabel" destination="lBg-Oi-g3z" id="Gdf-y4-bG2"/>
+                        <outlet property="pdfPageView" destination="gdd-ga-cWn" id="HzW-UW-lDL"/>
+                        <outlet property="titleLabel" destination="Yd0-Yh-YTt" id="1L1-dm-fKi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ufC-zG-Hkf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1947" y="70"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="gdd-ga-cWn">
+            <size key="intrinsicContentSize" width="139" height="159"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
