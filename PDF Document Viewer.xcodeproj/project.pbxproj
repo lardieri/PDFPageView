@@ -30,6 +30,7 @@
 		DF892E0F2921A2A300455E15 /* PDFPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFPageView.swift; sourceTree = "<group>"; };
 		DF892E112921A30100455E15 /* PageContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		DF892E192921C18B00455E15 /* Sample Document.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Sample Document.pdf"; sourceTree = "<group>"; };
+		DFAF6F662921CE47006748CB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 		DF892DEE2921A07300455E15 = {
 			isa = PBXGroup;
 			children = (
+				DFAF6F662921CE47006748CB /* README.md */,
 				DF892DF92921A07300455E15 /* PDF Document Viewer */,
 				DF892DF82921A07300455E15 /* Products */,
 			);
